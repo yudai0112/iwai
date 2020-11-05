@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="description" content="最新技術と自然との調和を目指す">
+<meta name="viewport" content="width=device-width">
+<title>IWAI | 出会ったことのないお祝いを届ける</title>
+<%# <link rel="stylesheet" media="all" href="app/assets/stylesheets/css/style.css"> %>
+<%# <script src="javascript/script.js"></script> %>
+</head>
+
+<body id="top">
+<header id="header">
+	<div id="headerWrap">
+		<h1><%= image_tag "IWAI logo.jpg", :width=>"142", :height=>"80", :alt=>"logo"%></h1>
+		<nav id="mainnav">
+			<p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+			<div class="panel">
+				<ul>
+					<li><a href="#top">TOP</a></li>
+					<li><a href="#sec01">MESSAGE</a></li>
+					<li><a href="#sec06">CATEGORY</a></li>
+					<li><a href="#sec03">NEW ITEM</a></li>
+					<li><a href="#sec04">CREATOR</a></li>
+      <% if user_signed_in? %>
+      <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li>
+			<li><%= link_to current_user.nickname, "#", class: "user-nickname"%> </li>
+      <% else %>
+      <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+      <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+				</ul>
+			</div>
+		</nav>
+	</div>
+</header>
+
+<div id="mainImg">
+	<%= image_tag "IWAI top.jpg" %>
+</div>
+
+<!-- MESSAGE -->
+<section id="sec01">
+	<header>
+		<h2><span>Message</span></h2>
+	</header>
+	<div class="innerS">
+		親友や友人、会社の同僚に先輩後輩、結婚という新しい門出に"あなたが選んだ価値あるプレゼント"を贈りましょう。
+		『IWIA』では様々なクリエイターが創った、ここでしか出会えない商品を購入することができます。
+		いたる所で見かける商品ではなく、『目新しい』『斬新な発想』『センスある一品』だからこそ相手の記憶に残ります。
+	</div>
+</section>
+<!-- // MESSAGE -->
+<%= image_tag "3sen.jpg" %>
+<!-- CATEGORY -->
+<section id="sec06">
+	<header>
+		<h2><span>CATEGORY</span></h2>
+			<div class="innerS">
+	大切な方に贈る商品を5000円、10000円、20000円、300000円、と予算別に一覧表示をさせて選びやすくすることができます。
+	</div>
+	</header>
+	<ul id="gallery">
+		<li><%= image_tag " 5000.jpg", :width=>"426", :height=>"418" %></li>
+		<li><%= image_tag " 10000.jpg", :width=>"426", :height=>"418" %></li>
+		<li><%= image_tag " 20000.jpg", :width=>"426", :height=>"418" %></li>
+		<li><%= image_tag " 30000.jpg", :width=>"426", :height=>"418" %></li>
+	</ul>
+</section>
+<!-- // CATEGORY -->
+
+<!-- NEW ITEM -->
+<section id="sec03">
+	<header>
+		<h2><span>NEW ITEM</span></h2>
+	</header>
+	<div class="innerS">
+		<%= image_tag "newitem.jpg", :width=>"726", :height=>"333", :alt=>""%>
+		<p>世界中のクリエイター達が創りあげた新商品が随時更新されます。最新アイテムをチェックしてプレゼントを届けましょう。</p>
+	</div>
+</section>
+
+<!-- // NEW ITEM -->
+
+<%= image_tag "aida.jpg" %>
+
+<!-- CREATOR --> 
+<section id="sec04">
+	<header>
+		<h2><span>CREATOR</span></h2>
+	</header>
+	<div class="inner">
+		<ul class="col3">
+			<li>
+				<p class="img"><%= image_tag "create3.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
+				<p><b>クリエイター 【 Yudai 】</b></p>
+				<p>彼は独創的なセンスで様々なアート作品を作り出している。彼は独創的なセンスで様々なアート作品を作り出している。彼は独創的なセンスで様々なアート作品を作り出している。</p>
+			</li>
+			<li>
+				<p class="img"><%= image_tag "create2.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
+				<p><b>クリエイター 【 鯛子 】</b></p>
+				<p>男女でものづくりを行う感性がたくさんの人々を魅了する。男女でものづくりを行う感性がたくさんの人々を魅了する。男女でものづくりを行う感性がたくさんの人々を魅了する。</p>
+			</li>
+			<li>
+				<p class="img"><%= image_tag "create1.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
+				<p><b>クリエイター 【 MEKATA 】</b></p>
+				<p>8bitの世界観でどこか懐かしいレトロ感がある商品を発信するITBOY。8bitの世界観でどこか懐かしいレトロ感がある商品を発信するITBOY。8bitの世界観でどこか懐かしいレトロ感がある商品を発信するITBOY。</p>
+			</li>
+		</ul>
+	</div>
+</section>
+<!-- // CREATOR -->
+
+<!-- COMPANY -->
+<!-- // COMPANY -->
+
+<footer id="footer">
+	Copyright(c) 2020 IWAI Inc. All Rights Reserved. Design by Yudai Mekata
+</footer>
+
+</body>
+</html>
