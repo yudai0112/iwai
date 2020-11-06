@@ -14,4 +14,5 @@ class Item < ApplicationRecord
 
   validates :category_id, :burden_id, :area_id, :area_day_id, presence: true, numericality: { other_than: 0 } 
   validates :price, inclusion: { in: 1000..35000 }
+  validates :item_pas, format: { with: /\A[a-zA-Z]+\z/,}
 end
