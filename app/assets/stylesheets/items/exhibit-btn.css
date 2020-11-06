@@ -1,0 +1,24 @@
+.purchase-btn {
+  width: 85px;
+  height: 85px;
+  background: #ce3c3c;
+  text-align: center;
+  border-radius: 50%;
+  bottom: 32px;
+  right: 32px;
+  position: fixed;
+  padding: 0px;
+}
+
+.purchase-btn-text {
+  color: #fff;
+  display: block;
+  font-family: 'ヒラギノ角ゴ StdN','Hiragino Kaku Gothic StdN', sans-serif;
+  font-size: 15px;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.purchase-btn-icon {
+  width: 90px;
+}
