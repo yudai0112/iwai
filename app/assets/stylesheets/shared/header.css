@@ -83,6 +83,12 @@
   margin-right: 3vw;
   color: #333333;
   font-weight: bold;
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  background: #FFF;
+  border: solid 1px#FF0000;/*線*/
+  border-radius: 5px;/*角の丸み*/
 }
 
 

@@ -24,7 +24,7 @@
 					<li><a href="#sec04">CREATOR</a></li>
       <% if user_signed_in? %>
       <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout"%> </li>
-			<li><%= link_to current_user.nickname, "#", class: "user-nickname"%> </li>
+			<li><%= link_to "#{current_user.nickname}さんログイン中", "#", class: "user-nickname"%> </li>
       <% else %>
       <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
       <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
@@ -81,9 +81,38 @@
 </section>
 
 <!-- // NEW ITEM -->
+   <ul class='item-lists'>
+      <% @items.each do |item| %> 
+      <li class='list'>
+        <%= link_to item_path(item.id) do %>
+        <div class='item-img-content'>
+          <%= image_tag item.image, class: "item-img" %>
+
+          <%# <% if item.order != nil %>
+          <div class='sold-out'>
+             <%# <span>Sold Out!!</span> %>
+          </div>
+          <%# <% end %>
+
+        </div>
+        <div class='item-info'>
+          <h3 class='item-name'>
+            <%= item.product %>
+          </h3>
+          <div class='item-price'>
+            <span><%= item.price %>円<br>(税込み)</span>
+            <div class='star-btn'>
+              <%= image_tag "like.png", class:"star-icon" %>
+              <span class='star-count'>0</span>
+            </div>
+          </div>
+        </div>
+        <% end %>
+      <% end %>
+      </li>
+		</ul>
 
 <%= image_tag "aida.jpg" %>
-
 <!-- CREATOR --> 
 <section id="sec04">
 	<header>
@@ -110,9 +139,12 @@
 	</div>
 </section>
 <!-- // CREATOR -->
-
-<!-- COMPANY -->
-<!-- // COMPANY -->
+<%= link_to new_item_path do %>　
+<div class='purchase-btn'>
+  <span class='purchase-btn-text'>出品</span>
+    <%= image_tag 'mizuhiki.png' , size: '185x50' ,class: "purchase-btn-icon" %>
+  <% end %>
+</div>
 
 <footer id="footer">
 	Copyright(c) 2020 IWAI Inc. All Rights Reserved. Design by Yudai Mekata
