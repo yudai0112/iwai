@@ -1,7 +1,7 @@
 /* 商品の概要 */
 
 .item-show {
-  background-color: #f8f8f8;
+  background-color: #ffffff;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@
   height: 50vh;
   width: 60vw;
   min-height: 500px;
-  background-color: rgb(205, 202, 202);
+  background-color: #FFF(205, 202, 202);
   object-fit: contain;
 }
 
@@ -53,6 +53,7 @@
 .item-red-btn {
   text-align: center;
   background-color: #ea352d;
+  border-radius: 30px;
   font-size: 24px;
   font-weight: bold;
   color: #FFF;
@@ -108,8 +109,8 @@
   border-radius: 40px;
   width: 15vw;
   min-width: 200px;
-  color: rgb(249, 75, 0);
-  border: 2px solid #ffb340;
+  color: rgb(249, 29, 0);
+  border: 2px solid #f11e1ee7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -164,8 +165,8 @@
 
 .comment-btn {
   line-height: 48px;
-  background-color: #3CCACE;
-  border: 1px solid #3CCACE;
+  background-color:  #ea352d;
+  border: 1px solid  #ea352d;
   color: #fff;
   width: 50%;
   min-width: 150px;
@@ -193,14 +194,18 @@
 .change-item-btn {
   font-size: 30px;
   text-decoration: none;
-  color: #3CCACE;
+  color: #ea352d;
 }
 
 .another-item {
   display: block;
   margin: 30px 0px 8px;
-  color: #3CCACE;
+  color:  #ea352d;
   text-decoration: none;
   font-weight: bold;
+  margin: 2em 0;
+  padding: 0.5em 1em;
+  border: solid 3px  #ea352d;/*線*/
+  border-radius: 10px;/*角の丸み*/
   font-size: 23px;
 }
