@@ -5,6 +5,11 @@ class ItemsController < ApplicationController
   def index
     @items = Item.all.order("created_at DESC")
   end
+  
+  def index2
+    @items = Item.where(category.id)
+  end
+
 
   def new
     @item = Item.new
