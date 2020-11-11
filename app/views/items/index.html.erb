@@ -7,6 +7,7 @@
 <title>IWAI | 出会ったことのないお祝いを届ける</title>
 <%# <link rel="stylesheet" media="all" href="app/assets/stylesheets/css/style.css"> %>
 <%# <script src="javascript/script.js"></script> %>
+
 </head>
 
 <body id="top">
@@ -61,10 +62,10 @@
 	</div>
 	</header>
 	<ul id="gallery">
-		<li><%= image_tag " 5000.jpg", :width=>"426", :height=>"418" %></li>
-		<li><%= image_tag " 10000.jpg", :width=>"426", :height=>"418" %></li>
-		<li><%= image_tag " 20000.jpg", :width=>"426", :height=>"418" %></li>
-		<li><%= image_tag " 30000.jpg", :width=>"426", :height=>"418" %></li>
+		<li><%= link_to image_tag(' 5000.jpg' , size: '426x418'), "/" %></li>
+		<li><%= link_to image_tag(' 10000.jpg' , size: '426x418'), "/" %></li>
+		<li><%= link_to image_tag(' 20000.jpg' , size: '426x418'), "/" %></li>
+		<li><%= link_to image_tag(' 30000.jpg' , size: '426x418'), "/" %></li>
 	</ul>
 </section>
 <!-- // CATEGORY -->
@@ -87,12 +88,16 @@
         <%= link_to item_path(item.id) do %>
         <div class='item-img-content'>
           <%= image_tag item.image, class: "item-img" %>
-
-          <%# <% if item.order != nil %>
+ 					<div id="likes_buttons<%= item.id %>">
+  					 <%= render partial: 'likes/like', locals: { item: item, like: @like} %>
+ 					</div>
+					 <p>いいね</p>
+					
+           <% if item.order != nil %>
           <div class='sold-out'>
-             <%# <span>Sold Out!!</span> %>
+              <span>売り切れ!!</span>
           </div>
-          <%# <% end %>
+           <% end %>
 
         </div>
         <div class='item-info'>
@@ -102,8 +107,6 @@
           <div class='item-price'>
             <span><%= item.price %>円<br>(税込み)</span>
             <div class='star-btn'>
-              <%= image_tag "like.png", class:"star-icon" %>
-              <span class='star-count'>0</span>
             </div>
           </div>
         </div>
@@ -121,17 +124,17 @@
 	<div class="inner">
 		<ul class="col3">
 			<li>
-				<p class="img"><%= image_tag "create3.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
+				<p class="img"><%= link_to image_tag "create3.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
 				<p><b>クリエイター 【 Yudai 】</b></p>
 				<p>彼は独創的なセンスで様々なアート作品を作り出している。彼は独創的なセンスで様々なアート作品を作り出している。彼は独創的なセンスで様々なアート作品を作り出している。</p>
 			</li>
 			<li>
-				<p class="img"><%= image_tag "create2.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
+				<p class="img"><%= link_to image_tag "create2.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
 				<p><b>クリエイター 【 鯛子 】</b></p>
 				<p>男女でものづくりを行う感性がたくさんの人々を魅了する。男女でものづくりを行う感性がたくさんの人々を魅了する。男女でものづくりを行う感性がたくさんの人々を魅了する。</p>
 			</li>
 			<li>
-				<p class="img"><%= image_tag "create1.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
+				<p class="img"><%= link_to image_tag "create1.jpg", :width=>"270", :height=>"206", :alt=>"" %></p>
 				<p><b>クリエイター 【 MEKATA 】</b></p>
 				<p>8bitの世界観でどこか懐かしいレトロ感がある商品を発信するITBOY。8bitの世界観でどこか懐かしいレトロ感がある商品を発信するITBOY。8bitの世界観でどこか懐かしいレトロ感がある商品を発信するITBOY。</p>
 			</li>

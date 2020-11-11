@@ -3,7 +3,7 @@ app/assets/stylesheets/items/new.css %>
 
 <div class="items-sell-contents">
   <header class="items-sell-header">
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
+    <%= link_to image_tag('IWAI logo.jpg' , size: '185x50'), "/" %>
   </header>
   <div class="items-sell-main">
     <h2 class="items-sell-title">商品の情報を入力</h2>
@@ -26,13 +26,13 @@ app/assets/stylesheets/items/new.css %>
     <%# 商品名と商品説明 %>
     <div class="new-items">
       <div class="weight-bold-text">
-        商品名
+        ▶︎ 商品名
         <span class="indispensable">必須</span>
       </div>
       <%= f.text_area :product, class:"items-text", id:"item-name", placeholder:"商品名（必須 40文字まで)", maxlength:"40" %>
       <div class="items-explain">
         <div class="weight-bold-text">
-          商品の説明
+          ▶︎ 商品の説明
           <span class="indispensable">必須</span>
         </div>
         <%= f.text_area :product_copy, class:"items-text", id:"item-info", placeholder:"商品の説明（必須 1,000文字まで）（色、素材、重さ、定価、注意点など）例）2010年頃に1万円で購入したジャケットです。ライトグレーで傷はありません。あわせやすいのでおすすめです。" ,rows:"7" ,maxlength:"1000" %>
@@ -42,18 +42,13 @@ app/assets/stylesheets/items/new.css %>
 
     <%# 商品の詳細 %>
     <div class="items-detail">
-      <div class="weight-bold-text">商品の詳細</div>
+      <div class="weight-bold-text">▶︎ 商品の詳細</div>
       <div class="form">
         <div class="weight-bold-text">
           カテゴリー
           <span class="indispensable">必須</span>
         </div>
         <%= f.collection_select(:category_id, Category.all, :id, :name, {}, {class:"select-box", id:"item-category"}) %>
-        <div class="weight-bold-text">
-          商品の状態
-          <span class="indispensable">必須</span>
-        </div>
-        <%= f.collection_select(:status_id, Status.all, :id, :status, {}, {class:"select-box", id:"item-sales-status"}) %>
       </div>
     </div>
     <%# /商品の詳細 %>
@@ -61,8 +56,7 @@ app/assets/stylesheets/items/new.css %>
     <%# 配送について %>
     <div class="items-detail">
       <div class="weight-bold-text question-text">
-        <span>配送について</span>
-        <a class="question" href="#">?</a>
+        <span>▶︎ 配送について</span>
       </div>
       <div class="form">
         <div class="weight-bold-text">
@@ -87,8 +81,7 @@ app/assets/stylesheets/items/new.css %>
     <%# 販売価格 %>
     <div class="sell-price">
       <div class="weight-bold-text question-text">
-        <span>販売価格<br>(¥300〜9,999,999)</span>
-        <a class="question" href="#">?</a>
+        <span>▶︎ 販売価格<br>(¥300〜9,999,999)</span>
       </div>
       <div>
         <div class="price-content">
@@ -114,7 +107,11 @@ app/assets/stylesheets/items/new.css %>
       </div>
     </div>
     <%# /販売価格 %>
-
+      <div class="weight-bold-text">
+        ▶︎ 出品パスワード
+        <span class="indispensable">必須</span>
+      </div>
+      <%= f.text_area :item_pas, class:"items-text", id:"item-name", placeholder:"出品用パスワードを入力して下さい", maxlength:"10" %>
     <%# 注意書き %>
     <div class="caution">
       <p class="sentence">
@@ -146,12 +143,9 @@ app/assets/stylesheets/items/new.css %>
   <footer class="items-sell-footer">
     <ul class="menu">
       <li><a href="#">プライバシーポリシー</a></li>
-      <li><a href="#">フリマ利用規約</a></li>
+      <li><a href="#">iwai利用規約</a></li>
       <li><a href="#">特定商取引に関する表記</a></li>
     </ul>
-    <%= link_to image_tag('furima-logo-color.png' , size: '185x50'), "/" %>
-    <p class="inc">
-      ©︎Furima,Inc.
-    </p>
+    <%= link_to image_tag('IWAI logo2.jpg' , size: '185x50'), "/" %>
   </footer>
 </div>

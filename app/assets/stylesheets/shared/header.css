@@ -37,7 +37,7 @@
   width: 5vh;
   border: 0;
   cursor: pointer;
-  background-color: #3ccace;
+  background-color: #eb2020;
   padding: 8px;
 }
 
@@ -84,7 +84,7 @@
   color: #333333;
   font-weight: bold;
   padding: 0.5em 1em;
-  margin: 2em 0;
+  margin: 2em 2em;
   font-weight: bold;
   background: #FFF;
   border: solid 1px#FF0000;/*線*/
