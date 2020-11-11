@@ -4,6 +4,7 @@ class LikesController < ApplicationController
   def create
     @like = Lile.create(user_id: current_user.id, item_id: params[:item_id])
   end
+  
 
   def destroy
     like = Lile.find_by(user_id: current_user.id, item_id: params[:item_id])
