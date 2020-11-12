@@ -3,7 +3,7 @@
   <% if Lile.exists?(item_id:item.id,user_id:current_user.id) %>
     <%= link_to item_likes_path(item_id: item.id), method: :delete, remote: true do %>
       <div class="vertical_like">
-       <%= image_tag "lile_red.png", size: '40x40' %>
+       <%= image_tag "like_red.png", size: '40x40' %>
       </div>
     <% end %>
   <% else %>
