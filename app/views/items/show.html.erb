@@ -26,6 +26,7 @@
     </div>
  					<div id="likes_buttons<%= @item.id %>">
   					 <%= render partial: 'likes/like', locals: { item: @item, like: @like} %>
+             いいね
  					</div>
     <%# ログインしているユーザーと出品しているユーザーが、同一人物の場合と同一人物ではない場合で、処理を分けましょう %>
   <% if  @item.order == nil  %>
